@@ -1,0 +1,17 @@
+.searchKey {
+  color: #18a0c6;
+  font-size: 24px;
+}
+.filter-product {
+  margin-bottom: 20px;
+}
+#filter-select {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+#filter-select:focus {
+  outline: none;
+}

@@ -1,0 +1,56 @@
+<app-header></app-header>
+<section class="showAllPd">
+    <div class="container">
+        <div class="detail-navBar">
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <li id="all-pd"><a href="/allProduct">Tất cả sản phẩm</a></li>
+            </ul>
+        </div>
+        <div class="showAllPd__content">
+            <h2 class="section-text">Tất cả sản phẩm</h2>
+            <div class="filter-product d-flex justify-content-end">
+                <div>
+                    <span class="filter-tile">Lọc sản phẩm: </span>
+                    <select id="filter-select">
+                        <option value="0">--Chọn lọc</option>
+                        <option value="1">Mới nhất</option>
+                        <option value="2">Cũ nhất</option>
+                        <option value="3">Giá tăng dần</option>
+                        <option value="4">Giá giảm dần</option>
+                    </select>
+                </div>
+            </div>
+            <div class="showAllPd__list">
+                <a class="showAllPd__item text-decoration-none" href="/detailProduct/{{pd.id}}/{{pd.idCate}}"
+                    *ngFor="let pd of products | paginate: { itemsPerPage: 7, currentPage: p }">
+                    <div class="card">
+                        <img src="{{pd.image}}" class="card-img-top" alt="...">
+                        <div class="card-body" *ngIf="pd.sale!=0">
+                            <h5 class="card-title">{{pd.nameProduct}}</h5>
+                            <div class="card-discount d-flex align-items-end">
+                                <p class="card-new">{{(pd.price - (pd.price*pd.sale)) | formatPrice}}<span
+                                        class="vnd">đ</span>
+                                </p>
+                                <span class="card-sale">Sale {{pd.sale*100}}%</span>
+                            </div>
+                            <p class="card-old">{{pd.price | formatPrice}}<span class="vnd">đ</span></p>
+                        </div>
+                        <div class="card-body" *ngIf="pd.sale==0">
+                            <h5 class="card-title">{{pd.nameProduct}}</h5>
+                            <div class="card-discount d-flex align-items-end">
+                                <p class="card-new">{{pd.price | formatPrice}}<span class="vnd">đ</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            <div class="container d-flex justify-content-center align-items-center mt-3 mb-3">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

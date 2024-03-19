@@ -1,0 +1,74 @@
+<app-header></app-header>
+<section class="cart">
+    <div class="container">
+        <div class="cart__content">
+            <div class="row" style="justify-content: center; background-color: #f7f7f7;">
+                <div class="col-8">
+
+                    <div class="cart__list">
+                        <div class="cart__title d-flex justify-content-between">
+                            <div>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>Lịch sử mua hàng</span>
+                            </div>
+
+                        </div>
+                        <div class="cart__products">
+                            <div class="cart__item" *ngFor="let pd of products">
+                                <div class="cart__detail">
+                                    <a class="cart__img" href="/detailProduct/{{pd.id}}/{{pd.idCate}}">
+                                        <img src="{{pd.image}}" alt="">
+                                    </a>
+                                    <div class="cart__caption">
+                                        <div class="cart__info">
+                                            <a class="cart__name"
+                                                href="/detailProduct/{{pd.id}}/{{pd.idCate}}">{{pd.nameProduct}}</a>
+                                            <div class="cart__amount">
+                                                <span>Số lượng: </span>
+                                                <input type="number" name="quantityCart" id="quantityCart" min="1"
+                                                    max="20" value="{{pd.quantity}}">
+                                            </div>
+
+                                        </div>
+                                        <div class="cart__price" *ngIf="pd.sale==0">
+                                            <div class="price-new">{{pd.price | formatPrice}} ₫</div>
+                                            <div class="price-des">(Giá đã bao gồm VAT)</div>
+                                        </div>
+                                        <div class="cart__price" *ngIf="pd.sale!=0">
+                                            <div class="price-new">{{(pd.price - (pd.price*pd.sale)) | formatPrice}} ₫
+                                            </div>
+                                            <div class="price-des">(Giá đã bao gồm VAT)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="cart__total">
+                        <div class="cart__title">
+                            <i class="fa-solid fa-cash-register"></i>
+                            <span>Tổng tiền đơn hàng</span>
+                        </div>
+                        <div class="cart__money">
+                            <div class="cart__group">
+                                <div class="cart__label">Giá gốc:</div>
+                                <div class="cart__value price-cart">{{priceCart | formatPrice}} đ</div>
+                            </div>
+                            <div class="cart__group money-edit">
+                                <div class="cart__label">Giảm giá:</div>
+                                <div class="cart__value price-sale">{{priceSale | formatPrice}} đ</div>
+                            </div>
+                            <div class="cart__group">
+                                <div class="cart__label">Tổng tiền:</div>
+                                <div class="cart__value total-money">{{totalMoney | formatPrice}} đ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

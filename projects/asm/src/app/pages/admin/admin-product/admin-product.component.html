@@ -1,0 +1,55 @@
+<section class="main-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 left-admin">
+                <app-sidebar-admin></app-sidebar-admin>
+            </div>
+            <div class="col-10 right-admin">
+                <app-header-admin></app-header-admin>
+                <div class="content-admin">
+                    <div class="content-adminTop">
+                        <h2>Quản lý sản phẩm</h2>
+                        <div class="admin-btnAdd">
+                            <a class="btn--add" href="/formAddPd"><i class="fa fa-plus"></i> Thêm sản phẩm</a>
+                        </div>
+                    </div>
+                    <div class="content-adminBottom">
+                        <table>
+                            <thead>
+                                <th>id</th>
+                                <th>tên sản phẩm</th>
+                                <th>hình ảnh</th>
+                                <th>giá</th>
+                                <th>mức giảm giá</th>
+                                <th>lượt mua</th>
+                                <th>thương hiệu</th>
+                                <th>thao tác</th>
+                            </thead>
+                            <tbody class="infoCate">
+                                <tr *ngFor="let pd of listPD">
+                                    <td class="id-pd">{{pd.id}}</td>
+                                    <td>{{pd.nameProduct}}</td>
+                                    <td><img style="width:70px; height:70px;" src="{{pd.image}}" alt=""></td>
+                                    <td>{{pd.price | formatPrice}} <span class="vnd">đ</span></td>
+                                    <td *ngIf="pd.sale != 0">{{pd.sale * 100}}%</td>
+                                    <td *ngIf="pd.sale == 0"></td>
+                                    <td>{{pd.purchase}}</td>
+                                    <td>{{pd.brand}}</td>
+                                    <td class="btnTd">
+                                        <div class="btns-admin">
+                                            <a class="btn--edit" href="/formUpdatePd/{{pd.id}}"><i
+                                                    class="fa fa-edit"></i> Sửa</a>
+                                            <button type="button" class="btn--delete" (click)="deletePd(pd.id)"><i
+                                                    class="fa fa-times-circle"></i> Xóa</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <app-footer-admin></app-footer-admin>
+            </div>
+        </div>
+    </div>
+</section>

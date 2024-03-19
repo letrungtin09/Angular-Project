@@ -1,0 +1,40 @@
+<app-header></app-header>
+<section class="detailCate">
+    <div class="container">
+        <div class="detail-navBar">
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <li id="cate-name">{{category.nameCate}}</li>
+            </ul>
+        </div>
+        <div class="detailCate__content">
+            <h2 class="section-text" id="name-category">{{category.nameCate}}</h2>
+            <div class="detailCate__list">
+                <a class="detailCate__item text-decoration-none" href="/detailProduct/{{pd.id}}/{{pd.idCate}}"
+                    *ngFor="let pd of productCate">
+                    <div class="card">
+                        <img src="{{pd.image}}" class="card-img-top" alt="...">
+                        <div class="card-body" *ngIf="pd.sale!=0">
+                            <h5 class="card-title">{{pd.nameProduct}}</h5>
+                            <div class="card-discount d-flex align-items-end">
+                                <p class="card-new">{{(pd.price - (pd.price*pd.sale)) | formatPrice}}<span
+                                        class="vnd">đ</span>
+                                </p>
+                                <span class="card-sale">Sale {{pd.sale*100}}%</span>
+                            </div>
+                            <p class="card-old">{{pd.price | formatPrice}}<span class="vnd">đ</span></p>
+                        </div>
+                        <div class="card-body" *ngIf="pd.sale==0">
+                            <h5 class="card-title">{{pd.nameProduct}}</h5>
+                            <div class="card-discount d-flex align-items-end">
+                                <p class="card-new">{{pd.price | formatPrice}}<span class="vnd">đ</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

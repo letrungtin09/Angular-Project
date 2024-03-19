@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="form-gadgets login">
+    <div class="form-container login__form">
+        <form class="form-user" #formLogin="ngForm" (ngSubmit)="onLogin(formLogin.value)">
+            <div class="login__content">
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email" placeholder="Email" required email ngModel
+                    #email="ngModel"><br>
+                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px;"
+                    *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors?.['required']">* Vui lòng nhập email</div>
+                    <div *ngIf="email.errors?.['email']">* Vui lòng nhập đúng định dạng email</div>
+                </div>
+                <label for="password">Mật khẩu</label><br>
+                <input type="password" name="password" id="password" placeholder="Mật khẩu" required ngModel
+                    #password="ngModel">
+                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px;"
+                    *ngIf="password.invalid && (password.dirty || password.touched)">
+                    * Vui lòng nhập mật khẩu
+                </div>
+            </div>
+            <div class="login__save">
+                <input type="checkbox" name="save">
+                <label for="save">Ghi nhớ tài khoản</label>
+            </div>
+            <div class="login__btn">
+                <button class="btn--login" [disabled]="formLogin.invalid">Đăng nhập</button>
+            </div>
+            <div class="login__forget">
+                <span>hoặc <a href="/forgotPassword">Quên mật khẩu</a></span>
+            </div>
+            <div class="login__register">
+                <span>Không có tài khoản ? <a href="/register">Đăng ký</a></span>
+            </div>
+            <div class="login__social">
+                <div class="login__facebook">
+                    <a href="#">Đăng nhập bằng Facebook</a>
+                </div>
+                <div class="login__google">
+                    <a href="#">Đăng nhập bằng Google</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+<app-header></app-header>
+<section class="searchPd">
+    <div class="container">
+        <div class="searchPd__content">
+            <h2 class="section-text" id="result-search">Kết quả tìm kiếm của <span
+                    class="searchKey">"{{keyword}}"</span></h2>
+            <div class="filter-product d-flex justify-content-end">
+                <div>
+                    <span class="filter-tile">Lọc sản phẩm: </span>
+                    <select id="filter-select">
+                        <option value="0">--Chọn lọc</option>
+                        <option value="1">Mới nhất</option>
+                        <option value="2">Cũ nhất</option>
+                        <option value="3">Giá tăng dần</option>
+                        <option value="4">Giá giảm dần</option>
+                    </select>
+                </div>
+            </div>
+            <div class="searchPd__list">
+                <a class="searchPd__item text-decoration-none" href="/detailProduct/{{pd.id}}/{{pd.idCate}}"
+                    *ngFor="let pd of arrSearchPD">
+                    <div class="card">
+                        <img src="{{pd.image}}" class="card-img-top" alt="...">
+                        <div class="card-body" *ngIf="pd.sale!=0">
+                            <h5 class="card-title">{{pd.nameProduct}}</h5>
+                            <div class="card-discount d-flex align-items-end">
+                                <p class="card-new">{{(pd.price - (pd.price*pd.sale)) | formatPrice}}<span
+                                        class="vnd">đ</span>
+                                </p>
+                                <span class="card-sale">Sale {{pd.sale*100}}%</span>
+                            </div>
+                            <p class="card-old">{{pd.price | formatPrice}}<span class="vnd">đ</span></p>
+                        </div>
+                        <div class="card-body" *ngIf="pd.sale==0">
+                            <h5 class="card-title">{{pd.nameProduct}}</h5>
+                            <div class="card-discount d-flex align-items-end">
+                                <p class="card-new">{{pd.price | formatPrice}}<span class="vnd">đ</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

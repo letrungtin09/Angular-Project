@@ -1,0 +1,75 @@
+<app-header></app-header>
+<section class="cart">
+    <div class="container">
+        <div class="cart__content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cart__list">
+
+                        <div class="cart__products">
+                            <section class="formInsertEdit">
+                                <div class="formInsertEdit__title">
+                                    <h3>THANH TOÁN ĐƠN HÀNG</h3>
+                                </div>
+                                <div class="formInsertEdit__space"></div>
+                                <div class="formInsertEdit__content">
+                                    <form [formGroup]="formPay" (ngSubmit)="onSubmit()">
+                                        <div class="formInsertEdit__item">
+                                            <label class="formInsertEdit__label" for="fullName">Họ và tên</label><br>
+                                            <input class="formInsertEdit__input" type="text" name="fullName"
+                                                id="fullName" formControlName="fullName" required>
+                                            <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px; display: inline-block;"
+                                                *ngIf="formPay.get('fullName')?.invalid && (formPay.get('fullName')?.dirty || formPay.get('fullName')?.touched)">
+                                                * Vui lòng nhập họ và tên
+                                            </div>
+                                        </div>
+                                        <div class="formInsertEdit__item">
+                                            <label class="formInsertEdit__label" for="phoneNumber">Số điện
+                                                thoại</label><br>
+                                            <input class="formInsertEdit__input" type="text" name="phoneNumber"
+                                                id="phoneNumber" formControlName="phoneNumber" required>
+                                            <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px; display: inline-block;"
+                                                *ngIf="formPay.get('phoneNumber')?.invalid && (formPay.get('phoneNumber')?.dirty || formPay.get('phoneNumber')?.touched)">
+                                                * Vui lòng nhập số điện thoại
+                                            </div>
+                                        </div>
+                                        <div class="formInsertEdit__item">
+                                            <label class="formInsertEdit__label" for="email">Email</label><br>
+                                            <input class="formInsertEdit__input" type="text" name="email" id="email"
+                                                formControlName="email" required email>
+                                            <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px;"
+                                                *ngIf="formPay.get('email')?.invalid && (formPay.get('email')?.dirty || formPay.get('email')?.touched)">
+                                                <div *ngIf="formPay.get('email')?.errors?.['required']">* Vui lòng nhập
+                                                    email</div>
+                                                <div *ngIf="formPay.get('email')?.errors?.['email']">* Vui lòng nhập
+                                                    đúng định dạng
+                                                    email</div>
+                                            </div>
+                                        </div>
+                                        <div class="formInsertEdit__item">
+                                            <label class="formInsertEdit__label" for="address">Địa chỉ</label><br>
+                                            <input class="formInsertEdit__input" type="text" name="address" id="address"
+                                                formControlName="address" required>
+                                            <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px; display: inline-block;"
+                                                *ngIf="formPay.get('address')?.invalid && (formPay.get('address')?.dirty || formPay.get('address')?.touched)">
+                                                * Vui lòng nhập địa chỉ
+                                            </div>
+                                        </div>
+                                        <div class="formInsertEdit__item formInsertEdit__btn">
+                                            <button type="submit" name="btn-insert" class="btn-form"
+                                                id="btnInsert">Thanh
+                                                toán</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,46 @@
+<section class="main-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 left-admin">
+                <app-sidebar-admin></app-sidebar-admin>
+            </div>
+            <div class="col-10 right-admin">
+                <app-header-admin></app-header-admin>
+
+                <section class="formInsertEdit">
+                    <div class="formInsertEdit__title">
+                        <h3>CẬP NHẬT LOẠI SẢN PHẨM</h3>
+                    </div>
+                    <div class="formInsertEdit__space"></div>
+                    <div class="formInsertEdit__content">
+                        <form #formCate="ngForm" (ngSubmit)="onSubmit(formCate)">
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="idCate">Mã loại sản phẩm</label><br>
+                                <input class="formInsertEdit__input input-readonly" id="idCate" type="text"
+                                    name="idCate" ngModel #idCate="ngModel" [(ngModel)]="cate.id" readonly>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="nameCate">Tên loại sản phẩm</label><br>
+                                <input class="formInsertEdit__input" type="text" name="nameCate" id="nameCate" ngModel
+                                    #nameCate="ngModel" [(ngModel)]="cate.nameCate" required>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="nameCate.invalid && nameCate.touched">
+                                    * Vui lòng nhập tên loại sản phẩm
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item formInsertEdit__btn">
+                                <button type="submit" name="btn-update" class="btn-form" id="btnUpdate"
+                                    [disabled]="formCate.invalid">Cập
+                                    nhật</button>
+                                <button type="reset" class="btn-form">Nhập lại</button>
+                                <a href="/adminCate" class="btn-form">Danh sách</a>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <app-footer-admin></app-footer-admin>
+            </div>
+        </div>
+    </div>
+</section>

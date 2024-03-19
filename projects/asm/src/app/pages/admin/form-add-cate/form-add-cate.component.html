@@ -1,0 +1,46 @@
+<section class="main-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 left-admin">
+                <app-sidebar-admin></app-sidebar-admin>
+            </div>
+            <div class="col-10 right-admin">
+                <app-header-admin></app-header-admin>
+
+                <section class="formInsertEdit">
+                    <div class="formInsertEdit__title">
+                        <h3>THÊM LOẠI SẢN PHẨM</h3>
+                    </div>
+                    <div class="formInsertEdit__space"></div>
+                    <div class="formInsertEdit__content">
+                        <form [formGroup]="formCate" (ngSubmit)="onSubmit()">
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="idCate">Mã loại sản phẩm</label><br>
+                                <input class="formInsertEdit__input input-readonly" id="idCate" type="text"
+                                    name="idCate" value="Auto number" readonly>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="nameCate">Tên loại sản phẩm</label><br>
+                                <input class="formInsertEdit__input" type="text" name="nameCate" id="nameCate"
+                                    formControlName="nameCate" required>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="formCate.get('nameCate')?.invalid && (formCate.get('nameCate')?.dirty || formCate.get('nameCate')?.touched)">
+                                    * Vui lòng nhập tên loại sản phẩm
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item formInsertEdit__btn">
+                                <button type="submit" name="btn-insert" class="btn-form" id="btnInsert"
+                                    [disabled]="formCate.invalid">Thêm
+                                    mới</button>
+                                <button type="reset" class="btn-form">Nhập lại</button>
+                                <a href="/adminCate" class="btn-form">Danh sách</a>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <app-footer-admin></app-footer-admin>
+            </div>
+        </div>
+    </div>
+</section>

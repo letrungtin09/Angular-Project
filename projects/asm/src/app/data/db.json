@@ -1,0 +1,334 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nameProduct": "LG UltraGear 27GR95QE-B.ATV - 26.5in OLED QHD 240Hz",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41413/techzones-lg-ultragear-27gr95qe-batv-265in-oled-qhd-240hz-003ms.jpg",
+      "price": 24490000,
+      "sale": 0.1,
+      "featured": 1,
+      "purchase": 10,
+      "idCate": 1,
+      "brand": "LG"
+    },
+    {
+      "id": 2,
+      "nameProduct": "Dahua DHI-LM27-C201 - 27in FHD IPS",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41393/techzones-dahua-dhi-lm27-c201-27in-fhd-ips.jpg",
+      "price": 2700000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 5,
+      "idCate": 1,
+      "brand": "Dahua"
+    },
+    {
+      "id": 3,
+      "nameProduct": "ASUS Vivobook 15 X1504ZA-NJ582W - Intel UHD",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41430/techzones-laptop-asus-vivobook-15-x1504za-nj582w-intel-core-i3-1215u-8gb-512gb-intel-uhd-5.png",
+      "price": 16990000,
+      "sale": 0.15,
+      "featured": 0,
+      "purchase": 2,
+      "idCate": 2,
+      "brand": "ASUS"
+    },
+    {
+      "id": 4,
+      "nameProduct": "Garmin Venu 3 - Stone White",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41396/techzones-garmin-venu-3-stone-white.jpg",
+      "price": 12290000,
+      "sale": 0,
+      "featured": 1,
+      "purchase": 12,
+      "idCate": 4,
+      "brand": "Garmin"
+    },
+    {
+      "id": 5,
+      "nameProduct": "Máy đọc sách Kindle Paperwhite 4 chống nước 8GB",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/19351/techzones-kindle-paperwhite-chong-nuoc-1.jpg",
+      "price": 5690000,
+      "sale": 0,
+      "featured": 1,
+      "purchase": 20,
+      "idCate": 8,
+      "brand": "Amazon"
+    },
+    {
+      "id": 6,
+      "nameProduct": "Razer Ornata V3 X",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/39083/techzones-razerornata-v3-x.png",
+      "price": 1090000,
+      "sale": 0.1,
+      "featured": 1,
+      "purchase": 27,
+      "idCate": 9,
+      "brand": "Razer"
+    },
+    {
+      "id": 7,
+      "nameProduct": "Dahua DHI-LM24-A200 - 23.6in FHD VA",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41386/techzones-dahua-dhi-lm24-a200-236in-fhd-va.jpg",
+      "price": 2000000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 7,
+      "idCate": 1,
+      "brand": "Dahua"
+    },
+    {
+      "id": 8,
+      "nameProduct": "Dahua DHI-LM27-E231 - 27in FHD IPS",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41406/techzones-dahua-dhi-lm27-e231-27in-fhd-ips.jpg",
+      "price": 4190000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 5,
+      "idCate": 1,
+      "brand": "Dahua"
+    },
+    {
+      "id": 9,
+      "nameProduct": "Dell Vostro 3430 - i7-1355U - 16GB - 512GB SSD",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41409/techzones-dell-vostro-3430-i7-1355u-16gb-512gb-ssd-win-11-xam-6.jpg",
+      "price": 25990000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 14,
+      "idCate": 2,
+      "brand": "Dell"
+    },
+    {
+      "id": 10,
+      "nameProduct": "Lenovo ThinkPad T16 Gen 2 - i7-1355U - 16GB DDR5",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41345/techzones-lenovo-thinkpad-t16-gen-2.jpg",
+      "price": 31090000,
+      "sale": 0.2,
+      "featured": 1,
+      "purchase": 10,
+      "idCate": 2,
+      "brand": "Lenovo"
+    },
+    {
+      "id": 11,
+      "nameProduct": "Garmin Instinct Black - Tactical Edition Camo",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/20964/techzones-garmin-instinct-black-tactical-edition-camo-3.png",
+      "price": 9900000,
+      "sale": 0.05,
+      "featured": 1,
+      "purchase": 9,
+      "idCate": 4,
+      "brand": "Garmin"
+    },
+    {
+      "id": 12,
+      "nameProduct": "Razer Basilisk V3 X HyperSpeed",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/38929/techzones-razer-basilisk-v3-x-hyperspeed.jpg",
+      "price": 1890000,
+      "sale": 0,
+      "featured": 1,
+      "purchase": 13,
+      "idCate": 9,
+      "brand": "Lenovo"
+    },
+    {
+      "id": 13,
+      "nameProduct": "LG Gram 2023 14Z90R-G.AH53A5 - i5-1340P",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/40406/techzones-lg-gram-2023-9.jpg",
+      "price": 32490000,
+      "sale": 0,
+      "featured": 1,
+      "purchase": 6,
+      "idCate": 2,
+      "brand": "LG"
+    },
+    {
+      "id": 14,
+      "nameProduct": "Razer DeathStalker V2 Pro TKL - Keyboard Linear Red Switch",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/39100/techzones-razer-deathstalker-v2-pro-tkl-2.png",
+      "price": 4790000,
+      "sale": 0.15,
+      "featured": 1,
+      "purchase": 16,
+      "idCate": 9,
+      "brand": "Razer"
+    },
+    {
+      "id": 15,
+      "nameProduct": "Razer BlackWidow V4 Pro - Yellow Switch - US Layout - FRML",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/39086/techzones-razer-blackwidow-v4-pro-3.png",
+      "price": 6199000,
+      "sale": 0,
+      "featured": 1,
+      "purchase": 3,
+      "idCate": 9,
+      "brand": "Razer"
+    },
+    {
+      "id": 16,
+      "nameProduct": "Dahua DHI-LM27-E230C - 27in FHD VA Cong",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41404/techzones-dahua-dhi-lm27-e230c-27in-fhd-va-cong.jpg",
+      "price": 3650000,
+      "sale": 0.1,
+      "featured": 0,
+      "purchase": 24,
+      "idCate": 1,
+      "brand": "Dahua"
+    },
+    {
+      "id": 17,
+      "nameProduct": "LG UltraGear 48GQ900-B.ATV - 48in OLED UHD 4K 120Hz",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41411/techzones-lg-ultragear-48gq900-batv-48in-oled-uhd-4k-120hz-01ms.jpg",
+      "price": 29490000,
+      "sale": 0.1,
+      "featured": 1,
+      "purchase": 18,
+      "idCate": 1,
+      "brand": "LG"
+    },
+    {
+      "id": 18,
+      "nameProduct": "Màn hình di động Viewsonic VP16 - 15.6in FHD OLED USB-C",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/40334/techzones-man-hinh-di-dong-viewsonic-vp16-156in-fhd-oled-usb-c.jpg",
+      "price": 13990000,
+      "sale": 0,
+      "featured": 1,
+      "purchase": 7,
+      "idCate": 1,
+      "brand": "ViewSonic"
+    },
+    {
+      "id": 19,
+      "nameProduct": "Máy đọc sách Onyx Boox Note Air 2 Plus",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/36490/techzones-may-doc-sach-note-air-2-plus-3.jpg",
+      "price": 13990000,
+      "sale": 0.2,
+      "featured": 0,
+      "purchase": 20,
+      "idCate": 8,
+      "brand": "Amazon"
+    },
+    {
+      "id": 20,
+      "nameProduct": "Garmin Venu SQ 2 - Metallic Mint Aluminum Bezel",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/37679/techzones-garmin-venu-sq-2-7.jpg",
+      "price": 6490000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 15,
+      "idCate": 4,
+      "brand": "Garmin"
+    },
+    {
+      "id": 21,
+      "nameProduct": "Garmin Approach R10",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/36494/techzones-garmin-approach-r10-4.jpg",
+      "price": 16290000,
+      "sale": 0.15,
+      "featured": 1,
+      "purchase": 17,
+      "idCate": 4,
+      "brand": "Garmin"
+    },
+    {
+      "id": 22,
+      "nameProduct": "Camera GoPro Hero 10 Black",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41003/techzones-gopro-hero10-black-1.jpg",
+      "price": 13990000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 12,
+      "idCate": 7,
+      "brand": "Gopro"
+    },
+    {
+      "id": 23,
+      "nameProduct": "Ultrasone Meteor One",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41117/techzones-ultrasone-meteor-one.png",
+      "price": 6990000,
+      "sale": 0,
+      "featured": 1,
+      "purchase": 5,
+      "idCate": 5,
+      "brand": "Ultrasone"
+    },
+    {
+      "id": 24,
+      "nameProduct": "Astel & Kern A & Norma SR35",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/41140/techzones-astel-kern-a-norma-sr35-3.jpg",
+      "price": 21900000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 16,
+      "idCate": 6,
+      "brand": "Astel & Kern"
+    },
+    {
+      "id": 25,
+      "nameProduct": "ASUS ROG Rapture GT-AX6000",
+      "image": "https://cdn.techzones.vn/Data/Sites/1/Product/39844/techzones-asus-rog-rapture-gt-ax6000.jpg",
+      "price": 11290000,
+      "sale": 0,
+      "featured": 0,
+      "purchase": 11,
+      "idCate": 3,
+      "brand": "ASUS"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "nameCate": "Màn hình PC"
+    },
+    {
+      "id": 2,
+      "nameCate": "Máy tính xách tay"
+    },
+    {
+      "id": 3,
+      "nameCate": "Thiết bị mạng"
+    },
+    {
+      "id": 4,
+      "nameCate": "Đồng hồ thông minh"
+    },
+    {
+      "id": 5,
+      "nameCate": "Tai nghe"
+    },
+    {
+      "id": 6,
+      "nameCate": "Máy nghe nhạc"
+    },
+    {
+      "id": 7,
+      "nameCate": "Camera"
+    },
+    {
+      "id": 8,
+      "nameCate": "Máy đọc sách"
+    },
+    {
+      "id": 9,
+      "nameCate": "Phụ kiện"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "tin@gmail.com",
+      "password": "tin123",
+      "username": "Tín",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "username": "Admin",
+      "role": "admin"
+    }
+  ],
+  "cart": []
+}

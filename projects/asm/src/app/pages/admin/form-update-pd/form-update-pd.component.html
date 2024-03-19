@@ -1,0 +1,119 @@
+<section class="main-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 left-admin">
+                <app-sidebar-admin></app-sidebar-admin>
+            </div>
+            <div class="col-10 right-admin">
+                <app-header-admin></app-header-admin>
+
+                <section class="formInsertEdit">
+                    <div class="formInsertEdit__title">
+                        <h3>CẬP NHẬT SẢN PHẨM</h3>
+                    </div>
+                    <div class="formInsertEdit__space"></div>
+                    <div class="formInsertEdit__content">
+                        <form #formPD="ngForm" (ngSubmit)="onSubmit(formPD)">
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="idPd">Mã sản phẩm</label><br>
+                                <input class="formInsertEdit__input input-readonly" type="text" name="idPd" id="idPd"
+                                    ngModel #idPd="ngModel" [(ngModel)]="productDetail.id" readonly>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="namePd">Tên sản phẩm</label><br>
+                                <input class="formInsertEdit__input" type="text" name="namePd" id="namePd" ngModel
+                                    #namePd="ngModel" [(ngModel)]="productDetail.nameProduct" required>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="namePd.invalid && (namePd.dirty || namePd.touched)">
+                                    * Vui lòng nhập tên sản phẩm
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="imgPd">Hình ảnh</label><br>
+                                <input class="formInsertEdit__input" type="text" name="imgPd" id="imgPd" ngModel
+                                    #imgPd="ngModel" [(ngModel)]="productDetail.image" required>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="imgPd.invalid && (imgPd.dirty || imgPd.touched)">
+                                    * Vui lòng nhập link hình ảnh
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="pricePd">Đơn giá</label><br>
+                                <input class="formInsertEdit__input" type="text" name="pricePd" id="pricePd" ngModel
+                                    #pricePd="ngModel" [(ngModel)]="productDetail.price" pattern="^[^0][1-9]+$"
+                                    required>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="pricePd.errors?.['pattern'] || (pricePd.invalid && (pricePd.dirty || pricePd.touched))">
+                                    * Vui lòng nhập giá sản phẩm bằng chữ số
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="salePd">Mức giảm giá</label><br>
+                                <input class="formInsertEdit__input" type="text" name="salePd" id="salePd" ngModel
+                                    #salePd="ngModel" [(ngModel)]="productDetail.sale" pattern="^[0](.([0-9]{1,2}))?$"
+                                    required>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="salePd.errors?.['pattern'] || (salePd.invalid && (salePd.dirty || salePd.touched))">
+                                    * Vui lòng nhập đúng định dạng mức giảm giá (Vd: 0 hoặc 0.1)
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="purchasePd">Lượt mua</label><br>
+                                <input class="formInsertEdit__input input-readonly" type="text" name="purchasePd"
+                                    id="purchasePd" ngModel #purchasePd="ngModel" [(ngModel)]="productDetail.purchase"
+                                    readonly>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="featuredPd">Đặc biệt</label><br>
+                                <div class="formInsertEdit__input input-radio">
+                                    <input type="radio" name="featuredPd" id="featuredPd" ngModel #featuredPd="ngModel"
+                                        [(ngModel)]="productDetail.featured" value="1"><span>Sản
+                                        phẩm
+                                        đặc
+                                        biệt</span>
+                                    <input type="radio" name="featuredPd" id="featuredPd" ngModel #featuredPd="ngModel"
+                                        [(ngModel)]="productDetail.featured" value="0"><span>Sản
+                                        phẩm bình
+                                        thường</span>
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="idCate">Loại sản phẩm</label><br>
+                                <select class="formInsertEdit__input" name="idCate" id="idCate" ngModel
+                                    #idCate="ngModel" [(ngModel)]="productDetail.idCate">
+                                    <option value="0">--- Chọn loại sản phẩm</option>
+                                    <option value="{{cate.id}}" *ngFor="let cate of listCate">
+                                        {{cate.nameCate}}
+                                    </option>
+                                </select>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="idCate.value=='0'">
+                                    * Vui lòng chọn loại sản phẩm
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item">
+                                <label class="formInsertEdit__label" for="brandPd">Thương hiệu</label><br>
+                                <input class="formInsertEdit__input" type="text" name="brandPd" id="brandPd" ngModel
+                                    #brandPd="ngModel" [(ngModel)]="productDetail.brand" required>
+                                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:10px; display: inline-block;"
+                                    *ngIf="brandPd.invalid && (brandPd.dirty || brandPd.touched)">
+                                    * Vui lòng nhập thương hiệu sản phẩm
+                                </div>
+                            </div>
+                            <div class="formInsertEdit__item formInsertEdit__btn">
+                                <button type="submit" name="btn-update" class="btn-form" id="btnUpdate"
+                                    [disabled]="formPD.invalid">Cập
+                                    nhật</button>
+                                <button type="reset" class="btn-form">Nhập lại</button>
+                                <a href="/adminProduct" class="btn-form">Danh sách</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </section>
+
+                <app-footer-admin></app-footer-admin>
+            </div>
+        </div>
+    </div>
+</section>

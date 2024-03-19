@@ -1,0 +1,23 @@
+<div class="header-admin">
+    <div class="header-form">
+        <form action="">
+            <input type="text" name="search" placeholder="Tìm kiếm nội dung bất kỳ...">
+            <button class="header-search">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+    <div class="header-account dropdown" *ngIf="user!==null">
+        <a class="user-admin dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/images/users/admin.jpg" alt="">
+        </a>
+        <span class="user-login">{{user.infoUser.username}}</span>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#"><i class="fa fa-bell"></i> Thông báo</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-cog"></i>Cài đặt</a></li>
+            <li><a class="dropdown-item" (click)="logOut()"><i class="fa fa-sign-out-alt"></i>Đăng
+                    xuất</a>
+            </li>
+        </ul>
+    </div>
+</div>

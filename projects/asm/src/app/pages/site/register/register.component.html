@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="form-gadgets register">
+    <div class="form-container register__form">
+        <form class="form-user" #formSignUp="ngForm" (ngSubmit)="onSignUp(formSignUp.value)">
+            <div class="register__content">
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email" required email ngModel #email="ngModel"><br>
+                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px;"
+                    *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors?.['required']">* Vui lòng nhập email</div>
+                    <div *ngIf="email.errors?.['email']">* Vui lòng nhập đúng định dạng email</div>
+                </div>
+                <label for="password">Mật khẩu</label><br>
+                <input type="password" name="password" id="password" required ngModel #password="ngModel"><br>
+                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px;"
+                    *ngIf="password.invalid && (password.dirty || password.touched)">
+                    * Vui lòng nhập mật khẩu
+                </div>
+                <label for="username">Họ và tên</label><br>
+                <input type="text" name="username" id="username" required ngModel #username="ngModel"><br>
+                <div style="color:red;font-size:14px;font-weight: bold;margin-bottom:5px;"
+                    *ngIf="username.invalid && (username.dirty || username.touched)">
+                    * Vui lòng nhập họ và tên
+                </div>
+            </div>
+            <div class="register__btn">
+                <button class="btn--register" [disabled]="formSignUp.invalid">Đăng ký</button>
+            </div>
+            <div class="register__rule">
+                <span>Bạn đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách bảo mật</a> của
+                    chúng tôi</span>
+            </div>
+            <div class="register__login">
+                <span>Đã có tài khoản ? <a href="/login">Đăng nhập</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

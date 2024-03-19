@@ -1,0 +1,132 @@
+<app-header></app-header>
+<section class="productIntro">
+    <div class="container">
+        <div class="detail-navBar">
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <li id="cate-product"><a href="/detailCategory/{{category.id}}">{{category.nameCate}}</a></li>
+                <li id="name-product"><a
+                        href="/detailProduct/{{product.id}}/{{product.idCate}}">{{product.nameProduct}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="productIntro__info">
+            <div class="row">
+                <div class="col-5">
+                    <div class="productIntro__slick">
+                        <div class="productIntro__slide">
+                            <div class="slide--item">
+                                <a href="{{product.image}}" data-fancybox="gallery">
+                                    <img src="{{product.image}}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="productIntro__des">
+                            <img src="../../../../assets/images/zoom-in.png" alt="">
+                            <span>Bấm vào để xem ảnh phóng to</span>
+                        </div>
+                        <div class="productIntro__promotion" *ngIf="product.sale!=0">Sale {{product.sale*100}} %</div>
+                        <div class="productIntro__promotion d-none" *ngIf="product.sale==0"></div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="productIntro__detail">
+                        <div class="productIntro__top">
+                            <h1>{{product.nameProduct}}</h1>
+                            <div class="productIntro__below">
+                                <div class="productIntro__brand">
+                                    <span>Thương hiệu: </span>
+                                    <a href="#">{{product.brand}}</a>
+                                </div>
+                                <div class="productIntro__id">
+                                    <span>Mã Sản phẩm: </span>
+                                    <span class="productIntro__code">27GR95QE-B.ATV</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row productIntro__detailPrice">
+                            <div class="col-7">
+                                <div class="productIntro__price" *ngIf="product.sale!=0">
+                                    <div class="price-new">{{(product.price - (product.price*product.sale)) |
+                                        formatPrice}}<span class="vnd">đ</span></div>
+                                    <div class="price-old">{{product.price | formatPrice}}<span class="vnd">đ</span>
+                                    </div>
+                                    <div class="price-des">(Đã bao gồm VAT)</div>
+                                </div>
+                                <div class="productIntro__price" *ngIf="product.sale==0">
+                                    <div class="price-new">{{product.price | formatPrice}}<span class="vnd">đ</span>
+                                    </div>
+                                    <div class="price-des">(Đã bao gồm VAT)</div>
+                                </div>
+                                <div class="productIntro__guarantee">
+                                    <span>Bảo hành: 12 tháng. </span><a href="#">(Quy định bảo hành)</a>
+                                </div>
+                                <div class="productIntro__option"></div>
+                                <div class="productIntro__btn">
+                                    <a href="/cart" class="btn--addCart" id="addCart"
+                                        (click)="addProduct(product.id, product.nameProduct, product.image, product.price, product.sale, product.idCate)">Thêm
+                                        vào giỏ hàng</a>
+                                    <a class="btn--installment1" href="#">Trả góp tiền mặt <div class="btn-des">Chỉ
+                                            từ
+                                            3.441.000 ₫/tháng</div></a>
+                                    <a class="btn--installment2" href="#">Trả góp 0% qua thẻ <div class="btn-des">
+                                            Visa,
+                                            Master, JCB</div></a>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="productIntro__support">
+                                    <h6 class="support-title">Tư vấn & Mua hàng - Gọi <a href="tel:19007777">1900
+                                            7777</a></h6>
+                                    <ul>
+                                        <li>Freeship với đơn hàng trên 1.000.000đ</li>
+                                        <li>Giao hàng ngay (Nội thành TP.HCM)</li>
+                                        <li>Giao trong vòng 2 đến 3 ngày làm việc (Toàn quốc)</li>
+                                    </ul>
+                                    <p class="support-free">MIỄN PHÍ CHARGE THẺ</p>
+                                    <div class="support-img">
+                                        <img src="../../../../assets/images/payment/ft-img6.png" alt="">
+                                        <img src="../../../../assets/images/payment/ft-img7.png" alt="">
+                                        <img src="../../../../assets/images/payment/ft-img8.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="productIntro__space">
+            <div class="productIntro__other">
+                <h5 class="other-title">Sản phẩm tương tự</h5>
+                <div class="other-slider">
+                    <div class="slider-item" *ngFor="let pd of productSame">
+                        <a class="other-card text-decoration-none" href="/detailProduct/{{pd.id}}/{{pd.idCate}}">
+                            <div class="card">
+                                <img src="{{pd.image}}" class="card-img-top" alt="...">
+                                <div class="card-body" *ngIf="pd.sale!=0">
+                                    <h5 class="card-title">{{pd.nameProduct}}</h5>
+                                    <div class="card-discount d-flex align-items-end">
+                                        <p class="card-new">{{(pd.price - (pd.price*pd.sale)) | formatPrice}}<span
+                                                class="vnd">đ</span>
+                                        </p>
+                                        <span class="card-sale">Sale {{pd.sale*100}}%</span>
+                                    </div>
+                                    <p class="card-old">{{pd.price | formatPrice}}<span class="vnd">đ</span></p>
+                                </div>
+                                <div class="card-body" *ngIf="pd.sale==0">
+                                    <h5 class="card-title">{{pd.nameProduct}}</h5>
+                                    <div class="card-discount d-flex align-items-end">
+                                        <p class="card-new">{{pd.price | formatPrice}}<span class="vnd">đ</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
